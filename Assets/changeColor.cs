@@ -9,8 +9,7 @@ public class changeColor : MonoBehaviour
    
     public SpriteRenderer spriteRenderer;
     public SpriteRenderer spriteRenderer2;
-    public int numPointsLeft;
-    public int numPointsRight;
+   
 
     public Text textLeft = null;
   
@@ -18,8 +17,7 @@ public class changeColor : MonoBehaviour
     void Start()
     {
       
-        numPointsLeft = 0;
-        numPointsRight = 0;
+     
       
     }
 
@@ -29,21 +27,21 @@ public class changeColor : MonoBehaviour
         //right
         if (Input.GetKeyDown("space"))
         {
-          
-            numPointsLeft = numPointsLeft + 1;
-            Debug.Log(numPointsLeft);
+
+
+            Score.score2 += 1;
             spriteRenderer.color = new Color(0f, 2f, 0f, 10f);
            
         }
 
         //left
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown("up"))
         {
-            numPointsRight = numPointsRight + 1;
+            Score.score += 1;
             spriteRenderer2.color = new Color(0f, 2f, 0f, 10f);
-            Debug.Log(numPointsLeft + " / " + numPointsRight);
+          
         }
-
+        
     }
    
 }
